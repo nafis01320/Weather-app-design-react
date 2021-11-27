@@ -66,7 +66,7 @@ div.search{
     /* width: 15em; */
     padding: 0.8em 0em;
     font-weight: 200;
-    width: 77%;
+    width: 80%;
 }
 .cloudText{
     display: flex;
@@ -86,7 +86,8 @@ div.search{
     align-items: center;
     flex-direction: column;
     /* border: 1px solid blue; */
-    padding: 0em 1em;
+    padding: 1em 3em;
+    width: 0;
     font-weight: 400;
     background: #00e1e173;
 }

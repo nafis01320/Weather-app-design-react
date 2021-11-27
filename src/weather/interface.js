@@ -1,14 +1,23 @@
-import React from 'react'
+import React,{useState} from 'react'
 import './style.css'
 
 const Interface = () => {
+    const [state, setstate] = useState();
+    const getWeatherInfo = async () =>{
+        try{
+            let url = `https://api.openweathermap.org/data/2.5/weather?q=${state}&appid=35dd5dc47c02eb4a6a1da61cf4f3eae7`;
+            
+        } catch(error){
+            console.log(error);
+        }
+    };
     return (
         <>
             <div className="background">
                 <div className="container">
                     <div className="search">
-                        <input type="search" className='search2' />
-                        <button className='searchBtn'>Search</button>
+                        <input type="search" className='search2' onChange={(e)=> setstate(e.target.value)} value={state} />
+                        <button className='searchBtn' onClick={getWeatherInfo}>Search</button>
                     </div>
                     <div className="body">
                         <div className="weatherLogo">Logo</div>
@@ -22,8 +31,8 @@ const Interface = () => {
                                 </div>
                             </div>
                             <div className="dateInfo temp1">
-                                <p className="dateData">7/11/12,</p>
-                                <p className="timeData">3:30:32 PM</p>
+                                <p className="dateData">{new Date().toLocaleString()}</p>
+                                {/* <p className="timeData"></p> */}
                             </div>
                         </div>
                         {/* footer */}
